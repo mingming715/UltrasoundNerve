@@ -60,4 +60,5 @@ class OutConv(nn.Module):
         self.conv = nn.Conv2d(in_channels, out_channels, kernel_size=1)
 
     def forward(self, x):
-        return self.conv(x)
+        x = F.sigmoid(self.conv(x))
+        return x
